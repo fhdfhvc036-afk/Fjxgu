@@ -1,4 +1,29 @@
-// Корневой файл сборки: только объявляет версию Android Gradle Plugin.
 plugins {
-    id 'com.android.application' version '8.6.1' apply false
+    id 'com.android.application'
 }
+
+android {
+    namespace 'com.narezany.slides'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.narezany.slides"
+        minSdk 23
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+// Нет внешних зависимостей: приложение собрано только на стандартном Android API.
